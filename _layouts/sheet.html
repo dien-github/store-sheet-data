@@ -1,44 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sheet Metadata and Viewer</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} - Sheet Music Archive</title>
+  <!-- Liên kết tới file CSS của bạn (nếu có) -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; }
+    header, footer { background: #f5f5f5; padding: 1rem; text-align: center; }
+    main { padding: 1rem; max-width: 800px; margin: 0 auto; }
+    .tag { background: #e0e0e0; padding: 0.2rem 0.5rem; margin-right: 0.5rem; border-radius: 3px; }
+    section { margin-top: 2rem; }
+    h1, h2 { color: #333; }
+    a { color: #0066cc; }
+  </style>
 </head>
 <body>
-    <div class="section">
-        <h2>Metadata Information</h2>
-        <p><strong>Title:</strong> Example Title</p>
-        <p><strong>Author:</strong> Example Author</p>
-        <p><strong>Date:</strong> 2023-10-05</p>
-    </div>
+  <header>
+    <h1>{{ page.title }}</h1>
+    <p><strong>Tác giả:</strong> {{ page.composer }}</p>
+    <p><strong>Ngày sáng tác:</strong> {{ page.date | date: "%d/%m/%Y" }}</p>
+    {% if page.tags %}
+      <p>
+        <strong>Thể loại:</strong>
+        {% for tag in page.tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </p>
+    {% endif %}
+  </header>
 
-    <div class="section">
-        <h2>PDF Viewer</h2>
-        <embed src="example.pdf" type="application/pdf" width="600" height="400">
-    </div>
+  <main>
+    <article>
+      {{ content }}
+    </article>
 
-    <div class="section"></div>
-        <h2>Audio Player</h2>
-        <audio controls>
-            <source src="example.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
+    {% if page.file_pdf %}
+    <section id="pdf-viewer">
+      <h2>Preview File PDF</h2>
+      <!-- Hiển thị file PDF trong trang -->
+      <embed src="{{ page.file_pdf | relative_url }}" type="application/pdf" width="100%" height="600px" />
+      <p><a href="{{ page.file_pdf | relative_url }}" download>Tải xuống file PDF</a></p>
+    </section>
+    {% endif %}
 
-    <div class="section">
-        <h2>Download Links</h2>
-        <a href="example.pdf" download>Download PDF</a><br>
-        <a href="example.mp3" download>Download Audio</a>
-    </div>
+    {% if page.file_mscz %}
+    <section id="mscz-info">
+      <h2>File MuseScore (MSCZ)</h2>
+      <p><a href="{{ page.file_mscz | relative_url }}" download>Tải xuống file MSCZ</a></p>
+    </section>
+    {% endif %}
+
+    {% if page.file_audio %}
+    <section id="audio-player">
+      <h2>Audio Preview</h2>
+      <audio controls>
+        <source src="{{ page.file_audio | relative_url }}" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ phần tử audio.
+      </audio>
+      <p><a href="{{ page.file_audio | relative_url }}" download>Tải xuống file Audio</a></p>
+    </section>
+    {% endif %}
+  </main>
+
+  <footer>
+    <p>&copy; {{ site.time | date: "%Y" }} - Sheet Music Archive</p>
+  </footer>
 </body>
 </html>
