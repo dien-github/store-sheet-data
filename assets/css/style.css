@@ -1,0 +1,12 @@
+---
+---
+
+@import "{{ site.theme }}";
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+h1, h2, h3 {
+  color: #2c3e50;
+}
