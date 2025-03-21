@@ -15,7 +15,7 @@ title: "Chào mừng đến với Website của tôi"
 # Sheet nhạc
 {% for sheet in site.sheets %}
   <div class="sheet-item">
-    <h2><a href="{{ sheet.url }}">{{ sheet.title }}</a></h2>
+    <h2><a href="{{ sheet.url | relative_url }}">{{ sheet.title }}</a></h2>
     <p>Composer: {{ sheet.composer }} - Date: {{ sheet.date | date: "%d/%m/%Y" }}</p>
   </div>
 {% endfor %}
