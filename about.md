@@ -1,8 +1,11 @@
 ---
 layout: default
-title: "Giới thiệu"
+title: "Giới Thiệu"
 ---
 
-# Giới thiệu về tôi
+# Giới Thiệu
 
-Đây là phần giới thiệu chi tiết về bản thân, kinh nghiệm, dự án đã thực hiện,…
+Đây là trang giới thiệu về website của tôi.
+
+# Liên kết nhanh
+{% include navigation.html %}
