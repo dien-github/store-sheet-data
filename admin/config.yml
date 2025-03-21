@@ -1,9 +1,11 @@
 backend:
   name: github
-  branch: main
+  branch: fix/sheet-page
   repo: dien-github/store-sheet-data
+
 media_folder: "uploads"
 public_folder: "/uploads"
+
 collections:
   - name: "sheets"
     label: "Sheet Music"
