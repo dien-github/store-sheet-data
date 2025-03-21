@@ -8,4 +8,4 @@ theme: jekyll-theme-minimal
 collections:
   sheets:
     output: true
-    permalink: /sheets/:title
+    permalink: /sheets/:path/

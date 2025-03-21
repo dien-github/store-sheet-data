@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} - Sheet Music Archive</title>
-  <!-- Liên kết tới file CSS của bạn (nếu có) -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <style>
     body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; }
@@ -39,7 +38,6 @@
     {% if page.file_pdf %}
     <section id="pdf-viewer">
       <h2>Preview File PDF</h2>
-      <!-- Hiển thị file PDF trong trang -->
       <embed src="{{ page.file_pdf | relative_url }}" type="application/pdf" width="100%" height="600px" />
       <p><a href="{{ page.file_pdf | relative_url }}" download>Tải xuống file PDF</a></p>
     </section>
