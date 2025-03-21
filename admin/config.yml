@@ -1,0 +1,21 @@
+backend:
+  name: github
+  branch: main
+  repo: dien-github/store-sheet-data
+media_folder: "uploads"
+public_folder: "/uploads"
+collections:
+  - name: "sheets"
+    label: "Sheet Music"
+    folder: "assets/sheets"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Composer", name: "composer", widget: "string" }
+      - { label: "Year", name: "year", widget: "number" }
+      - { label: "Description", name: "description", widget: "markdown" }
+      - { label: "File PDF", name: "file_pdf", widget: "file", required: false }
+      - { label: "File MSCZ", name: "file_mscz", widget: "file", required: false }
+      - { label: "Audio", name: "file_audio", widget: "file", required: false }
+      
