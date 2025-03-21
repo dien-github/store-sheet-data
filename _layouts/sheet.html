@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheet Metadata and Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <h2>Metadata Information</h2>
+        <p><strong>Title:</strong> Example Title</p>
+        <p><strong>Author:</strong> Example Author</p>
+        <p><strong>Date:</strong> 2023-10-05</p>
+    </div>
+
+    <div class="section">
+        <h2>PDF Viewer</h2>
+        <embed src="example.pdf" type="application/pdf" width="600" height="400">
+    </div>
+
+    <div class="section"></div>
+        <h2>Audio Player</h2>
+        <audio controls>
+            <source src="example.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div class="section">
+        <h2>Download Links</h2>
+        <a href="example.pdf" download>Download PDF</a><br>
+        <a href="example.mp3" download>Download Audio</a>
+    </div>
+</body>
+</html>

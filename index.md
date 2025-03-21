@@ -11,3 +11,11 @@ title: "Chào mừng đến với Website của tôi"
 - [Trang chủ](/index.md)
 - [Giới thiệu thêm về tôi](/about.md)
 - [Xem các bài viết trên Blog](/blog/)
+
+# Sheet nhạc
+{% for sheet in site.sheets %}
+  <div class="sheet-item">
+    <h2><a href="{{ sheet.url }}">{{ sheet.title }}</a></h2>
+    <p>Composer: {{ sheet.composer }} - Date: {{ sheet.date | date: "%d/%m/%Y" }}</p>
+  </div>
+{% endfor %}
