@@ -2,10 +2,10 @@ title: "DATA STORE"
 author: "grace"
 email: "tadntqna@gmaill.com"
 description: "Đây là mô tả về website của tôi."
-baseurl: "/store-sheet-data" # Nếu bạn deploy ở root (nếu là project page, có thể set thành "/ten-repo")
+baseurl: "/store-sheet-data" # Đường dẫn gốc của site
 url: "https://dien-github.github.io" # URL gốc của site
 theme: jekyll-theme-minimal
 collections:
   sheets:
-    ouput: true
+    output: true
     permalink: /sheets/:title
