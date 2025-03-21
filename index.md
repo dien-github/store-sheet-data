@@ -8,5 +8,6 @@ title: "Chào mừng đến với Website của tôi"
 Đây là trang chủ của website. Bạn có thể thêm nội dung giới thiệu về bản thân, dự án, hoặc blog của mình.
 
 # Liên kết nhanh
-- [Giới thiệu thêm ve toi](/about.md)
-- [Xem cac bai viet tren Blog](/blog/)
+- [Trang chủ](/)
+- [Giới thiệu thêm về tôi](/about.md)
+- [Xem các bài viết trên Blog](/blog/)
